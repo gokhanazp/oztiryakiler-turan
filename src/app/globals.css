@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Inter – self-hosted (Türkçe karakterler latin-ext alt kümesinde) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/inter-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/inter-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  /* Kurumsal mavi: #105bbc (navy-600) */
+  --color-navy-50: #eef5fd;
+  --color-navy-100: #d6e6f8;
+  --color-navy-200: #accdf1;
+  --color-navy-300: #7fb0e6;
+  --color-navy-400: #4a8ed9;
+  --color-navy-500: #1f70cf;
+  --color-navy-600: #105bbc;
+  --color-navy-700: #0d4b9c;
+  --color-navy-800: #0b3d7e;
+  --color-navy-900: #0a2f60;
+  --color-navy-950: #061c3b;
+
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-white text-slate-700 antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply text-navy-900;
+  text-wrap: balance;
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+@utility btn-primary {
+  @apply btn bg-brand-500 text-white shadow-lg shadow-brand-500/25 hover:bg-brand-600 focus-visible:outline-brand-500;
+}
+@utility btn-whatsapp {
+  @apply btn bg-[#25D366] text-white hover:bg-[#1ebe5b];
+}
+@utility btn-ghost {
+  @apply btn border border-white/30 text-white hover:bg-white/10;
+}
+@utility btn-outline {
+  @apply btn border border-navy-200 text-navy-800 hover:border-navy-500 hover:bg-navy-50;
+}
+
+@utility section {
+  @apply py-16 sm:py-20;
+}
+@utility eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.18em] text-brand-600;
+}
+
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
