@@ -6,7 +6,7 @@
  */
 export const site = {
   // Alan adı (sonunda / olmadan). Vercel'de bağladığınız domain ile aynı olmalı.
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://oztiryakiler-servisi.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.oztiryakiler-servisi.com",
 
   name: "Öztiryakiler Servisi",
   shortName: "Öztiryakiler Servis",
