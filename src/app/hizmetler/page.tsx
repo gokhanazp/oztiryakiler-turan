@@ -2,7 +2,8 @@ import { breadcrumbLd, buildMetadata } from "@/lib/seo";
 import { CtaBanner, DisclaimerBox, JsonLd, PageHero, Process, SectionHead, ServiceGrid } from "@/components/Sections";
 
 export const metadata = buildMetadata({
-  title: "Hizmetlerimiz – Öztiryakiler Endüstriyel Mutfak Servisi",
+  title: "Hizmetlerimiz | Öztiryakiler Endüstriyel Mutfak Servisi",
+  absoluteTitle: true,
   description: "Öztiryakiler ocak, buzdolabı, fritöz, benmari, fırın, pizza fırını, makarna haşlama, ızgara ve bulaşık makinesi servisi. İstanbul Avrupa Yakası'nda yerinde onarım.",
   path: "/hizmetler",
 });

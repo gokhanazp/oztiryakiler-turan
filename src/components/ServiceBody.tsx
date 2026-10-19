@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Service } from "@/data/services";
 import type { District } from "@/data/districts";
 import { getDistrict } from "@/data/districts";
-import { locative } from "@/lib/tr";
+import { hash, locative } from "@/lib/tr";
 import { CheckList, ContactCard, DisclaimerBox, FaqList, Process } from "./Sections";
 import type { Faq } from "@/data/services";
 import { PinIcon, WrenchIcon } from "./Icons";
@@ -11,6 +11,10 @@ type Props = { service: Service; district?: District; intro: string[]; faqs: Faq
 
 export default function ServiceBody({ service: s, district: d, intro, faqs }: Props) {
   const where = d ? `${d.name} ` : "";
+  // İlçe sayfalarında arızaların sayfaya özgü bir alt kümesi gösterilir (tekrar eden içerik azaltılır)
+  const faults = d
+    ? Array.from({ length: 4 }, (_, i) => s.faults[(hash(d.slug + s.slug) + i) % s.faults.length])
+    : s.faults;
   return (
     <div className="container-x grid gap-12 py-14 lg:grid-cols-[1fr_340px]">
       <article className="min-w-0 space-y-14">
@@ -26,7 +30,7 @@ export default function ServiceBody({ service: s, district: d, intro, faqs }: Pr
         <section>
           <h2 className="text-2xl font-extrabold">Sık Karşılaşılan Öztiryakiler {s.name} Arızaları</h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-            {s.faults.map((f) => (
+            {faults.map((f) => (
               <li key={f.title} className="rounded-xl border border-slate-200 bg-slate-50/60 p-5">
                 <h3 className="flex items-center gap-2 font-bold">
                   <span className="h-2 w-2 rounded-full bg-brand-500" />{f.title}
@@ -81,6 +85,13 @@ export default function ServiceBody({ service: s, district: d, intro, faqs }: Pr
           </section>
         )}
 
+        {d ? (
+          <p className="rounded-xl bg-navy-50 p-5 text-slate-700">
+            Tüm arıza tipleri, bakım önerileri ve servis süreci için{" "}
+            <Link href={`/${s.slug}`} className="font-semibold text-navy-600 underline underline-offset-2">{s.title}</Link> sayfamıza göz atabilirsiniz.
+          </p>
+        ) : (
+        <>
         <section>
           <h2 className="text-2xl font-extrabold">Öztiryakiler {s.name} Bakım Önerileri</h2>
           <p className="mt-3 text-slate-600">Düzenli bakım, arıza riskini azaltır ve cihaz ömrünü uzatır. Teknisyenlerimizin önerileri:</p>
@@ -91,6 +102,8 @@ export default function ServiceBody({ service: s, district: d, intro, faqs }: Pr
           <h2 className="text-2xl font-extrabold">Servis Süreci Nasıl İşler?</h2>
           <div className="mt-6"><Process /></div>
         </section>
+        </>
+        )}
 
         <section>
           <h2 className="text-2xl font-extrabold">{where}Öztiryakiler {s.name} Servisi Hakkında Sık Sorulan Sorular</h2>

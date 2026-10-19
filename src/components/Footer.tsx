@@ -17,7 +17,9 @@ export default function Footer() {
           </p>
           <ul className="mt-5 space-y-2.5 text-sm">
             <li className="flex gap-2"><PhoneIcon className="h-4 w-4 shrink-0 text-brand-400" /><a href={`tel:${site.phoneHref}`} className="hover:text-white">{site.phone}</a></li>
-            <li className="flex gap-2"><MailIcon className="h-4 w-4 shrink-0 text-brand-400" /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+            {site.email && (
+              <li className="flex gap-2"><MailIcon className="h-4 w-4 shrink-0 text-brand-400" /><a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a></li>
+            )}
             <li className="flex gap-2"><PinIcon className="h-4 w-4 shrink-0 text-brand-400" /><span>{site.serviceArea} – yerinde servis</span></li>
             <li className="flex gap-2"><ClockIcon className="h-4 w-4 shrink-0 text-brand-400" /><span>{site.hours.label}</span></li>
           </ul>
@@ -49,7 +51,7 @@ export default function Footer() {
             <Link href="/yasal-uyari" className="underline hover:text-white">Detaylı bilgi</Link>
           </p>
           <div className="mt-5 flex flex-col items-start justify-between gap-3 text-xs text-navy-300 sm:flex-row sm:items-center">
-            <p>© {year} {site.legalName}. Tüm hakları saklıdır.</p>
+            <p>© {year} {site.legalName || site.name}. Tüm hakları saklıdır.</p>
             <ul className="flex flex-wrap gap-4">
               <li><Link href="/yasal-uyari" className="hover:text-white">Yasal Uyarı</Link></li>
               <li><Link href="/kvkk" className="hover:text-white">KVKK Aydınlatma Metni</Link></li>

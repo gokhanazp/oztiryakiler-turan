@@ -194,3 +194,27 @@ export const DISTRICT_SUFFIX = "-oztiryakiler-servisi";
 export const districtPath = (d: District) => `/servis-bolgeleri/${d.slug}${DISTRICT_SUFFIX}`;
 export const getDistrictByPageSlug = (pageSlug: string) =>
   pageSlug.endsWith(DISTRICT_SUFFIX) ? getDistrict(pageSlug.slice(0, -DISTRICT_SUFFIX.length)) : undefined;
+
+/**
+ * Hizmet × ilçe sayfalarından Google'da dizine eklenecek olan ilçeler.
+ * Arama hacmi yüksek, ticari mutfak yoğunluğu fazla ilçeler seçildi.
+ * Diğer ilçelerin hizmet × ilçe sayfaları "noindex, follow" olur ve sitemap'e girmez
+ * (ilçe sayfaları ve hizmet sayfaları her zaman dizine eklenir).
+ * Bir ilçeye gerçek, özgün içerik (fotoğraf, yapılan işler, yorumlar) ekledikçe buraya ekleyin.
+ */
+export const indexedComboDistricts = [
+  "sisli",
+  "besiktas",
+  "beyoglu",
+  "fatih",
+  "bakirkoy",
+  "bahcelievler",
+  "bagcilar",
+  "basaksehir",
+  "esenyurt",
+  "beylikduzu",
+  "kagithane",
+  "sariyer",
+];
+
+export const isComboIndexed = (districtSlug: string) => indexedComboDistricts.includes(districtSlug);

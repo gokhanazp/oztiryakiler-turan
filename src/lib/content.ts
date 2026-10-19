@@ -21,26 +21,41 @@ export function comboIntro(s: District, sv: Service): string[] {
     `Teknisyenlerimiz ${sv.types.slice(0, 3).join(", ").toLocaleLowerCase("tr-TR")} gibi modellerde deneyimlidir. Onarım sonrası cihaz test edilerek teslim edilir.`,
   ];
 
-  return [pick(openers, seed), pick(closers, seed, 1)];
+  const fault = pick(sv.faults, seed, 2);
+  const otherAreas = s.areas.slice(4);
+  const locals = [
+    `${s.name} bölgesinde bu cihazı en çok ${sv.customers} kullanıyor. ${loc} en sık karşılaştığımız sorunlardan biri "${fault.title.toLocaleLowerCase("tr-TR")}" arızası: ${fault.text.charAt(0).toLocaleLowerCase("tr-TR") + fault.text.slice(1)}`,
+    `${s.profile.charAt(0).toLocaleUpperCase("tr-TR") + s.profile.slice(1)} ${s.name} ilçesindeki müşterilerimizin önemli bir kısmını oluşturuyor. Bu işletmelerde "${fault.title.toLocaleLowerCase("tr-TR")}" şikâyetiyle sık çağrılıyoruz; ${fault.text.charAt(0).toLocaleLowerCase("tr-TR") + fault.text.slice(1)}`,
+    `${otherAreas.length ? `${listToText(otherAreas)} dahil` : "İlçenin"} tüm ${s.name} mahallelerinde ${sv.customers} için Öztiryakiler ${sv.name.toLocaleLowerCase("tr-TR")} bakım ve onarımı yapıyoruz. Örneğin "${fault.title.toLocaleLowerCase("tr-TR")}" durumunda: ${fault.text.charAt(0).toLocaleLowerCase("tr-TR") + fault.text.slice(1)}`,
+  ];
+
+  return [pick(openers, seed), pick(locals, seed, 3), pick(closers, seed, 1)];
 }
 
 export function comboFaqs(s: District, sv: Service): Faq[] {
   const loc = locative(s.name);
   const nm = sv.name.toLocaleLowerCase("tr-TR");
+  const seed = `${sv.slug}-${s.slug}`;
+  const fault = pick(sv.faults, seed, 5);
+  const svFaq = pick(sv.faqs, seed, 7);
   return [
     {
       q: `${loc} Öztiryakiler ${nm} servisi aynı gün geliyor mu?`,
-      a: `Evet. ${s.name} ve çevresinde mobil ekiplerimiz bulunur; talebinizin saatine ve yoğunluğa bağlı olarak çoğu zaman aynı gün yerinde servis sağlıyoruz. Acil arızalar önceliklendirilir.`,
+      a: `Evet. ${s.name} ve komşu ilçelerde mobil ekiplerimiz bulunur; talebinizin saatine ve yoğunluğa bağlı olarak çoğu zaman aynı gün yerinde servis sağlıyoruz. Acil arızalar önceliklendirilir.`,
     },
     {
       q: `${s.name} hangi mahallelere ${nm} servisi veriyorsunuz?`,
       a: `${listToText(s.areas)} başta olmak üzere ${s.name} ilçesinin tüm mahallelerine hizmet veriyoruz.`,
     },
     {
-      q: `Öztiryakiler yetkili servisi misiniz?`,
-      a: `Hayır. Öztiryakiler markasının yetkili servisi değiliz; Öztiryakiler marka endüstriyel mutfak ekipmanlarına bakım ve onarım hizmeti veren bağımsız özel bir teknik servisiz. Yaptığımız işçilik ve taktığımız parçalar firmamızın garantisi altındadır.`,
+      q: `${loc} hangi işletmelere ${nm} servisi veriyorsunuz?`,
+      a: `${s.name} bölgesinde ağırlıklı olarak ${s.profile} için çalışıyoruz. ${sv.name} tarafında en çok ${sv.customers} bizi arıyor.`,
     },
-    ...sv.faqs.slice(0, 2),
+    {
+      q: `${s.name} – "${fault.title}" sorunu yerinde çözülür mü?`,
+      a: `Çoğu durumda evet. ${fault.text} Gerekli parça servis aracımızda varsa onarım aynı ziyarette tamamlanır.`,
+    },
+    svFaq,
   ];
 }
 

@@ -10,15 +10,16 @@ export const site = {
 
   name: "Öztiryakiler Servisi",
   shortName: "Öztiryakiler Servis",
-  // Ticari ünvanınız (fatura / vergi levhasındaki ad)
-  legalName: "Firma Ticari Ünvanı Ltd. Şti.", // DEĞİŞTİR
+  // Ticari ünvanınız (fatura / vergi levhasındaki ad). Boş bırakılırsa sitede ve schema'da gösterilmez.
+  legalName: "",
   slogan: "Endüstriyel Mutfak Ekipmanlarında Uzman Özel Teknik Servis",
 
   phone: "+90 536 931 96 67",
   phoneHref: "+905369319667",
   mobile: "+90 536 931 96 67",
   whatsapp: "905369319667", // WhatsApp numarası (ülke koduyla, + olmadan)
-  email: "info@oztiryakilerservisi.com", // DEĞİŞTİR
+  // E-posta: kurulu ve çalışan bir adres yazın (ör. info@oztiryakiler-servisi.com). Boşsa gösterilmez.
+  email: "",
 
   // Açık adres yok: hizmet bölgesi esaslı (mobil) servis.
   serviceArea: "İstanbul Avrupa Yakası",
@@ -47,6 +48,12 @@ export const site = {
     { value: "7/24", label: "Acil arıza hattı" },
   ],
   warrantyText: "Yapılan işçilik ve değiştirilen parçalar garantilidir.", // Garanti koşullarınıza göre güncelleyin
+
+  // Google Analytics 4 ölçüm kimliği (G-XXXXXXX). Vercel'de NEXT_PUBLIC_GA_ID olarak tanımlayın.
+  gaId: process.env.NEXT_PUBLIC_GA_ID || "",
+
+  /** İçeriğin son güncellenme tarihi – sitemap lastmod için. İçerik değiştikçe güncelleyin. */
+  contentUpdated: "2026-10-19",
 
   // Google Search Console doğrulama kodu (meta etiketi içeriği)
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "",

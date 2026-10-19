@@ -4,7 +4,15 @@ import { districts } from "@/data/districts";
 import type { Faq, Service } from "@/data/services";
 import type { District } from "@/data/districts";
 
+/** Mutlak URL. Anasayfa her yerde sonda "/" olmadan yazılır (Next.js canonical ile aynı biçim → canonical, og:url ve schema tutarlı). */
 export const absUrl = (path = "/") => `${site.url}${path === "/" ? "" : path}`;
+
+/** Meta description’ı kelime sınırında en fazla `max` karaktere kısaltır. */
+export function clampText(text: string, max = 155) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,.;:–-]+$/, "") + "…";
+}
 
 type MetaInput = {
   title: string;
@@ -19,7 +27,7 @@ export function buildMetadata({ title, description, path, keywords, absoluteTitl
   const url = absUrl(path);
   return {
     title: absoluteTitle ? { absolute: title } : title,
-    description,
+    description: clampText(description),
     keywords,
     alternates: { canonical: url },
     robots: noindex ? { index: false, follow: true } : undefined,
@@ -29,10 +37,10 @@ export function buildMetadata({ title, description, path, keywords, absoluteTitl
       url,
       siteName: site.name,
       title,
-      description,
+      description: clampText(description),
       images: [{ url: absUrl("/og.png"), width: 1200, height: 630, alt: site.name }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [absUrl("/og.png")] },
+    twitter: { card: "summary_large_image", title, description: clampText(description), images: [absUrl("/og.png")] },
   };
 }
 
@@ -46,11 +54,11 @@ export function localBusinessLd() {
     "@type": "LocalBusiness",
     "@id": BUSINESS_ID,
     name: site.name,
-    legalName: site.legalName,
+    legalName: site.legalName || undefined,
     description: `${site.slogan}. Öztiryakiler marka endüstriyel mutfak ekipmanları için bağımsız özel teknik servis (yetkili servis değildir).`,
-    url: site.url,
+    url: absUrl("/"),
     telephone: site.phoneHref,
-    email: site.email,
+    email: site.email || undefined,
     image: absUrl("/og.png"),
     logo: absUrl("/logo.png"),
     priceRange: "₺₺",
@@ -81,7 +89,7 @@ export function websiteLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${site.url}/#website`,
-    url: site.url,
+    url: absUrl("/"),
     name: site.name,
     inLanguage: "tr-TR",
     publisher: { "@id": BUSINESS_ID },
@@ -110,7 +118,6 @@ export function serviceLd(service: Service, path: string, district?: District) {
     description: service.metaDescription,
     url: absUrl(path),
     provider: { "@id": BUSINESS_ID },
-    brand: { "@type": "Brand", name: "Öztiryakiler" },
     areaServed: district
       ? { "@type": "AdministrativeArea", name: `${district.name}, İstanbul` }
       : districts.map((d) => ({ "@type": "AdministrativeArea", name: `${d.name}, İstanbul` })),

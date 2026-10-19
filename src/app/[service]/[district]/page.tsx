@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getService, services } from "@/data/services";
-import { districts, getDistrict } from "@/data/districts";
+import { districts, getDistrict, isComboIndexed } from "@/data/districts";
+import { site } from "@/config/site";
 import { breadcrumbLd, buildMetadata, faqLd, serviceLd } from "@/lib/seo";
 import { comboFaqs, comboIntro } from "@/lib/content";
 import { locative } from "@/lib/tr";
@@ -19,13 +20,15 @@ export async function generateMetadata({ params }: Params) {
   const s = getService(service);
   const d = getDistrict(district);
   if (!s || !d) return {};
-  const title = `${d.name} Öztiryakiler ${s.name} Servisi | Aynı Gün Yerinde Servis`;
-  const description = `${locative(d.name)} Öztiryakiler ${s.name.toLocaleLowerCase("tr-TR")} arızalarına aynı gün yerinde servis. ${d.areas.slice(0, 3).join(", ")} ve tüm ${d.name} mahalleleri. Garantili işçilik, şeffaf fiyat.`;
+  const base = `${d.name} Öztiryakiler ${s.name} Servisi`;
+  const title = base.length <= 42 ? `${base} | Aynı Gün Servis` : base;
+  const description = `${locative(d.name)} Öztiryakiler ${s.name.toLocaleLowerCase("tr-TR")} arızalarına aynı gün yerinde servis. ${d.areas.slice(0, 2).join(", ")} ve tüm mahalleler. Hemen arayın: ${site.phone}`;
   return buildMetadata({
     title,
     description,
     path: `/${s.slug}/${d.slug}`,
     absoluteTitle: true,
+    noindex: !isComboIndexed(d.slug),
     keywords: [`${d.name.toLocaleLowerCase("tr-TR")} öztiryakiler ${s.name.toLocaleLowerCase("tr-TR")} servisi`, `${d.name.toLocaleLowerCase("tr-TR")} ${s.name.toLocaleLowerCase("tr-TR")} tamiri`, ...s.keywords.slice(0, 2)],
   });
 }

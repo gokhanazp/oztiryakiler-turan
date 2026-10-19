@@ -3,6 +3,7 @@ import { useState } from "react";
 import { whatsappLink } from "@/config/site";
 import { services } from "@/data/services";
 import { districts } from "@/data/districts";
+import { track } from "./Analytics";
 
 /** Sunucu gerektirmeyen servis talep formu: bilgileri WhatsApp mesajı olarak iletir. */
 export default function ContactForm() {
@@ -19,6 +20,7 @@ export default function ContactForm() {
       `Cihaz: ${f.get("device")}`,
       `Arıza: ${f.get("note") || "-"}`,
     ].join("\n");
+    track("generate_lead", { method: "whatsapp_form", device: String(f.get("device")), district: String(f.get("district")) });
     window.open(whatsappLink(msg), "_blank", "noopener");
     setSent(true);
   }

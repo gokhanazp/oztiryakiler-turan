@@ -9,7 +9,7 @@ import { services } from "@/data/services";
 import type { Faq } from "@/data/services";
 
 export const metadata = buildMetadata({
-  title: "Öztiryakiler Servisi | İstanbul Avrupa Yakası Endüstriyel Mutfak Teknik Servisi",
+  title: "Öztiryakiler Servisi | Avrupa Yakası Endüstriyel Mutfak",
   description:
     "Öztiryakiler ocak, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında İstanbul Avrupa Yakası'nda aynı gün yerinde servis.",
   path: "/",
@@ -41,8 +41,8 @@ export default function HomePage() {
               İstanbul Avrupa Yakası · Aynı gün yerinde servis
             </p>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] !text-white sm:text-5xl lg:text-6xl">
-              Öztiryakiler Servisi
-              <span className="mt-2 block text-2xl font-bold text-brand-400 sm:text-3xl lg:text-4xl">Endüstriyel Mutfak Ekipmanlarında Uzman Teknik Servis</span>
+              <span className="mb-3 block text-xl font-bold text-brand-400 sm:text-2xl lg:text-3xl">İstanbul Avrupa Yakası</span>
+              Öztiryakiler Endüstriyel Mutfak Servisi
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-100">
               Öztiryakiler ocak, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında

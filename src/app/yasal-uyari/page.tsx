@@ -17,7 +17,7 @@ export default function LegalPage() {
           <h2>Bağımsız Servis Beyanı</h2>
           <p>{disclaimer}</p>
           <p>
-            {site.legalName} (&quot;{site.name}&quot;), Öztiryakiler markasının sahibi olan firma ile herhangi bir ortaklık, bayilik, distribütörlük
+            {site.legalName ? <>{site.legalName} (&quot;{site.name}&quot;)</> : site.name}, Öztiryakiler markasının sahibi olan firma ile herhangi bir ortaklık, bayilik, distribütörlük
             veya yetkili servis ilişkisi içinde değildir. Sitemizde yer alan &quot;Öztiryakiler&quot; ifadesi, yalnızca bakım ve onarım hizmeti verdiğimiz
             cihazların markasını tanımlamak amacıyla kullanılmaktadır.
           </p>

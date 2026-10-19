@@ -21,6 +21,7 @@ npm run build    # üretim derlemesi (275 sayfa)
 2. Environment Variables:
    - `NEXT_PUBLIC_SITE_URL` = `https://www.alanadiniz.com`
    - `NEXT_PUBLIC_GOOGLE_VERIFICATION` = Search Console doğrulama kodu (isteğe bağlı)
+   - `NEXT_PUBLIC_GA_ID` = Google Analytics 4 ölçüm kimliği, ör. `G-XXXXXXX` (isteğe bağlı). Tanımlanınca KVKK çerez onayı çıkar; onay verilirse GA yüklenir ve `phone_click`, `whatsapp_click`, `generate_lead` olayları ölçülür.
 3. Domains: hem `alanadiniz.com` hem `www.alanadiniz.com` ekleyin, birini diğerine **301 yönlendirin** (canonical ile aynı olmalı).
 
 ## Site yapısı (275 sayfa)
@@ -55,3 +56,9 @@ npm run build    # üretim derlemesi (275 sayfa)
 ## Marka / hukuk notu
 
 Firma Öztiryakiler'in yetkili servisi değildir. Bu beyan üst bilgi çubuğunda, her sayfanın içeriğinde, footer'da ve `/yasal-uyari` sayfasında yer alır. Öztiryakiler logosu kullanılmamıştır. Metinlerde "yetkili servis" iddiası bulunmaz – bu yapıyı koruyun.
+
+## SEO notları
+
+- Hizmet × ilçe sayfalarından yalnızca `src/data/districts.ts` > `indexedComboDistricts` listesindeki ilçeler dizine eklenir; diğerleri `noindex, follow` ve sitemap dışıdır. Bir ilçeye özgün içerik ekledikçe listeye ekleyin.
+- Sitemap `lastmod` değeri `src/config/site.ts` > `contentUpdated` tarihinden gelir; içerik değişince güncelleyin.
+- `legalName` ve `email` boşsa sitede ve schema'da gösterilmez.

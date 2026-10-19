@@ -16,6 +16,8 @@ export type Service = {
   maintenance: string[];
   faqs: Faq[];
   keywords: string[];
+  /** Bu cihazı en çok kullanan işletme tipleri – bölgesel içerik için */
+  customers: string;
 };
 
 export type IconKey =
@@ -35,7 +37,7 @@ export const services: Service[] = [
     name: "Ocak",
     title: "Öztiryakiler Ocak Servisi",
     icon: "ocak",
-    metaTitle: "Öztiryakiler Ocak Servisi | Gazlı & Elektrikli Ocak Tamiri",
+    metaTitle: "Öztiryakiler Ocak Servisi | Gazlı ve Elektrikli Ocak Tamiri",
     metaDescription:
       "Öztiryakiler gazlı ve elektrikli endüstriyel ocak arızalarında aynı gün yerinde servis. Brülör, termokupl, gaz valfi, rezistans onarımı. İstanbul Avrupa Yakası.",
     short: "Gazlı, elektrikli ve indüksiyonlu endüstriyel ocaklarda brülör, valf, termokupl ve rezistans onarımı.",
@@ -80,13 +82,14 @@ export const services: Service[] = [
       { q: "Gaz kokusu geldiğinde ne yapmalıyım?", a: "Ocağı kullanmayı bırakın, ana gaz vanasını kapatın, elektrik anahtarlarına dokunmadan ortamı havalandırın ve servis çağırın. Ciddi kaçaklarda 187 Doğalgaz Acil hattını arayın." },
     ],
     keywords: ["öztiryakiler ocak servisi", "öztiryakiler ocak tamiri", "endüstriyel ocak servisi", "gazlı ocak tamiri", "öztiryakiler termokupl"],
+    customers: "restoranlar, lokantalar, otel mutfakları ve toplu yemek üreticileri",
   },
   {
     slug: "oztiryakiler-buzdolabi-servisi",
     name: "Buzdolabı",
     title: "Öztiryakiler Buzdolabı Servisi",
     icon: "buzdolabi",
-    metaTitle: "Öztiryakiler Buzdolabı Servisi | Endüstriyel Buzdolabı Tamiri",
+    metaTitle: "Öztiryakiler Buzdolabı Servisi | Soğutma ve Gaz Dolumu",
     metaDescription:
       "Öztiryakiler dik tip, tezgah tipi ve teşhir buzdolaplarında soğutmama, buzlanma, gaz kaçağı ve kompresör arızalarına aynı gün servis. İstanbul Avrupa Yakası.",
     short: "Dik tip, tezgah tipi ve saladette buzdolaplarında soğutma, kompresör, gaz ve fan arızaları.",
@@ -131,13 +134,14 @@ export const services: Service[] = [
       { q: "Kompresör değişimi mantıklı mı yoksa yeni dolap mı almalıyım?", a: "Kasa ve soğutma devresi sağlamsa kompresör değişimi çoğu zaman ekonomiktir. Yerinde inceleme sonrası maliyet karşılaştırmasını şeffaf şekilde paylaşırız." },
     ],
     keywords: ["öztiryakiler buzdolabı servisi", "öztiryakiler buzdolabı tamiri", "endüstriyel buzdolabı servisi", "tezgah tipi buzdolabı tamiri", "buzdolabı gaz dolumu"],
+    customers: "restoranlar, kafeler, pastaneler, kasaplar ve market reyonları",
   },
   {
     slug: "oztiryakiler-fritoz-servisi",
     name: "Fritöz",
     title: "Öztiryakiler Fritöz Servisi",
     icon: "fritoz",
-    metaTitle: "Öztiryakiler Fritöz Servisi | Gazlı & Elektrikli Fritöz Tamiri",
+    metaTitle: "Öztiryakiler Fritöz Servisi | Fritöz Tamiri ve Bakımı",
     metaDescription:
       "Öztiryakiler gazlı ve elektrikli fritöz arızalarında yerinde servis. Isıtmama, termostat, emniyet termostatı, rezistans ve brülör onarımı. İstanbul Avrupa Yakası.",
     short: "Gazlı ve elektrikli fritözlerde ısıtmama, aşırı ısınma, termostat ve rezistans arızaları.",
@@ -181,6 +185,7 @@ export const services: Service[] = [
       { q: "Gazlı fritöz bakımı ne sıklıkla yapılmalı?", a: "Yoğun kullanımda 6 ayda bir brülör, termokupl ve gaz bağlantılarının kontrol edilmesini öneririz." },
     ],
     keywords: ["öztiryakiler fritöz servisi", "öztiryakiler fritöz tamiri", "endüstriyel fritöz servisi", "fritöz termostat değişimi", "gazlı fritöz tamiri"],
+    customers: "fast food zincirleri, burger ve tavuk restoranları, oteller",
   },
   {
     slug: "oztiryakiler-benmari-servisi",
@@ -229,13 +234,14 @@ export const services: Service[] = [
       { q: "Kireç benmariye zarar verir mi?", a: "Kireç, rezistansın ısısını suya aktarmasını zorlaştırır; bu da enerji tüketimini artırır ve rezistans ömrünü kısaltır. Düzenli kireç temizliği önerilir." },
     ],
     keywords: ["öztiryakiler benmari servisi", "öztiryakiler benmari tamiri", "benmari rezistans değişimi", "endüstriyel benmari servisi"],
+    customers: "self-servis lokantalar, yemekhaneler, otel kahvaltı salonları ve catering firmaları",
   },
   {
     slug: "oztiryakiler-firin-servisi",
     name: "Fırın",
     title: "Öztiryakiler Fırın Servisi",
     icon: "firin",
-    metaTitle: "Öztiryakiler Fırın Servisi | Konveksiyonel & Kombi Fırın Tamiri",
+    metaTitle: "Öztiryakiler Fırın Servisi | Kombi ve Konveksiyonel Fırın",
     metaDescription:
       "Öztiryakiler konveksiyonel, kombi (buharlı) ve pastane fırınlarında yerinde servis. Fan motoru, rezistans, buhar jeneratörü, kart arızaları. İstanbul Avrupa Yakası.",
     short: "Konveksiyonel, kombi buharlı ve katlı fırınlarda fan motoru, rezistans, kart ve buhar arızaları.",
@@ -279,6 +285,7 @@ export const services: Service[] = [
       { q: "Fırın bakımı yılda kaç kez yapılmalı?", a: "Yoğun kullanılan konveksiyonel ve kombi fırınlarda yılda en az iki kez periyodik bakım önerilir." },
     ],
     keywords: ["öztiryakiler fırın servisi", "öztiryakiler fırın tamiri", "konveksiyonel fırın servisi", "kombi fırın tamiri", "endüstriyel fırın servisi"],
+    customers: "oteller, pastaneler, unlu mamul üreticileri ve restoran mutfakları",
   },
   {
     slug: "oztiryakiler-pizza-firin-servisi",
@@ -326,13 +333,14 @@ export const services: Service[] = [
       { q: "Konveyörlü pizza fırını tamiri yapıyor musunuz?", a: "Evet. Konveyör motoru, zincir, hız kontrol ünitesi ve ısıtma grubu dahil tüm onarımları yapıyoruz." },
     ],
     keywords: ["öztiryakiler pizza fırın servisi", "öztiryakiler pizza fırını tamiri", "pizza fırını servisi", "pizza fırını taban taşı", "konveyörlü pizza fırını tamiri"],
+    customers: "pizzacılar, pideciler, İtalyan restoranları ve kafeler",
   },
   {
     slug: "oztiryakiler-makarna-haslama-servisi",
     name: "Makarna Haşlama",
     title: "Öztiryakiler Makarna Haşlama Servisi",
     icon: "makarna",
-    metaTitle: "Öztiryakiler Makarna Haşlama Servisi | Makarna Pişirici Tamiri",
+    metaTitle: "Öztiryakiler Makarna Haşlama Servisi | Tamir ve Bakım",
     metaDescription:
       "Öztiryakiler makarna haşlama (makarna pişirici) cihazlarında yerinde servis. Isıtmama, su girişi, taşma, rezistans ve brülör arızaları. İstanbul Avrupa Yakası.",
     short: "Elektrikli ve gazlı makarna pişiricilerde ısıtma, su girişi, tahliye ve taşma sorunları.",
@@ -373,13 +381,14 @@ export const services: Service[] = [
       { q: "Gazlı makarna pişirici bakımı yapıyor musunuz?", a: "Evet. Brülör temizliği, termokupl kontrolü ve gaz kaçak testi dahil periyodik bakım hizmeti veriyoruz." },
     ],
     keywords: ["öztiryakiler makarna haşlama servisi", "öztiryakiler makarna pişirici tamiri", "makarna haşlama cihazı servisi", "makarna haşlama tamiri"],
+    customers: "İtalyan restoranları, otel mutfakları ve toplu yemek mutfakları",
   },
   {
     slug: "oztiryakiler-izgara-servisi",
     name: "Izgara",
     title: "Öztiryakiler Izgara Servisi",
     icon: "izgara",
-    metaTitle: "Öztiryakiler Izgara Servisi | Gazlı, Elektrikli & Lav Taşlı Izgara Tamiri",
+    metaTitle: "Öztiryakiler Izgara Servisi | Lav Taşlı ve Gazlı Izgara",
     metaDescription:
       "Öztiryakiler lav taşlı, gazlı, elektrikli ızgara ve kontakt ızgaralarda yerinde servis. Brülör, rezistans, termostat ve ateşleme arızaları. İstanbul Avrupa Yakası.",
     short: "Lav taşlı, gazlı, elektrikli, düz ve kontakt ızgaralarda brülör, rezistans ve termostat onarımı.",
@@ -422,13 +431,14 @@ export const services: Service[] = [
       { q: "Kontakt ızgara tamiri yapıyor musunuz?", a: "Evet. Üst ve alt rezistans, termostat, menteşe ve kablo değişimi dahil onarım yapıyoruz." },
     ],
     keywords: ["öztiryakiler ızgara servisi", "öztiryakiler ızgara tamiri", "lav taşlı ızgara servisi", "gazlı ızgara tamiri", "endüstriyel ızgara servisi"],
+    customers: "kebapçılar, köfteciler, steakhouse'lar, burger ve tost salonları",
   },
   {
     slug: "oztiryakiler-bulasik-makinesi-servisi",
     name: "Bulaşık Makinesi",
     title: "Öztiryakiler Bulaşık Makinesi Servisi",
     icon: "bulasik",
-    metaTitle: "Öztiryakiler Bulaşık Makinesi Servisi | Endüstriyel Bulaşık Makinesi Tamiri",
+    metaTitle: "Öztiryakiler Bulaşık Makinesi Servisi | Yerinde Tamir",
     metaDescription:
       "Öztiryakiler tezgah altı, giyotin (kapaklı) ve konveyörlü bulaşık makinelerinde yerinde servis. Pompa, rezistans, boyler, dozaj ve su arızaları. İstanbul Avrupa Yakası.",
     short: "Tezgah altı, giyotin ve konveyörlü bulaşık makinelerinde pompa, boyler, rezistans ve dozaj arızaları.",
@@ -472,6 +482,7 @@ export const services: Service[] = [
       { q: "Deterjan dozaj pompası ayarı yapıyor musunuz?", a: "Evet. Dozaj pompası onarımı ve su sertliğine göre deterjan / parlatıcı miktarının ayarlanması hizmetimiz kapsamındadır." },
     ],
     keywords: ["öztiryakiler bulaşık makinesi servisi", "öztiryakiler bulaşık makinesi tamiri", "endüstriyel bulaşık makinesi servisi", "giyotin bulaşık makinesi tamiri", "tezgah altı bulaşık makinesi servisi"],
+    customers: "restoranlar, kafeler, oteller, hastane ve fabrika yemekhaneleri",
   },
 ];
 

@@ -3,7 +3,7 @@ import { breadcrumbLd, buildMetadata } from "@/lib/seo";
 import { CtaBanner, DisclaimerBox, JsonLd, PageHero, SectionHead, WhyUs } from "@/components/Sections";
 
 export const metadata = buildMetadata({
-  title: "Hakkımızda – Öztiryakiler Özel Teknik Servis",
+  title: "Hakkımızda – Özel Teknik Servis",
   description: "İstanbul Avrupa Yakası'nda Öztiryakiler marka endüstriyel mutfak ekipmanlarına bakım ve onarım hizmeti veren bağımsız özel teknik servis.",
   path: "/hakkimizda",
 });

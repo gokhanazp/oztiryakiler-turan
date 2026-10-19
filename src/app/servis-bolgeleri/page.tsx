@@ -2,7 +2,8 @@ import { breadcrumbLd, buildMetadata } from "@/lib/seo";
 import { CtaBanner, DistrictGrid, JsonLd, PageHero, SectionHead } from "@/components/Sections";
 
 export const metadata = buildMetadata({
-  title: "Servis Bölgeleri – İstanbul Avrupa Yakası Öztiryakiler Servisi",
+  title: "Servis Bölgeleri | Avrupa Yakası Öztiryakiler Servisi",
+  absoluteTitle: true,
   description: "İstanbul Avrupa Yakası'nın 25 ilçesinde Öztiryakiler endüstriyel mutfak ekipmanlarına aynı gün yerinde servis. Hizmet verdiğimiz tüm ilçeler.",
   path: "/servis-bolgeleri",
 });

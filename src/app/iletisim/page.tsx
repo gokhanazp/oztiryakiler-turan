@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 import { ClockIcon, MailIcon, PhoneIcon, PinIcon, WhatsappIcon } from "@/components/Icons";
 
 export const metadata = buildMetadata({
-  title: "İletişim – Öztiryakiler Servisi Servis Talebi",
+  title: "İletişim ve Servis Talebi",
   description: "Öztiryakiler endüstriyel mutfak ekipmanları servis talebi için bizi arayın veya WhatsApp'tan yazın. İstanbul Avrupa Yakası'nda aynı gün yerinde servis.",
   path: "/iletisim",
 });
@@ -19,7 +19,7 @@ export default function ContactPage() {
   const items = [
     { icon: <PhoneIcon />, label: "Telefon", value: site.phone, href: `tel:${site.phoneHref}` },
     { icon: <WhatsappIcon />, label: "WhatsApp", value: site.mobile, href: whatsappLink() },
-    { icon: <MailIcon />, label: "E-posta", value: site.email, href: `mailto:${site.email}` },
+    ...(site.email ? [{ icon: <MailIcon />, label: "E-posta", value: site.email, href: `mailto:${site.email}` }] : []),
     { icon: <PinIcon />, label: "Hizmet bölgesi", value: `${site.serviceArea} – 25 ilçede yerinde servis` },
     { icon: <ClockIcon />, label: "Çalışma saatleri", value: site.hours.label },
   ];

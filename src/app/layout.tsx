@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileCallBar from "@/components/MobileCallBar";
+import Analytics from "@/components/Analytics";
 import { JsonLd } from "@/components/Sections";
 import { site } from "@/config/site";
 import { localBusinessLd, websiteLd } from "@/lib/seo";
@@ -11,7 +12,7 @@ import { localBusinessLd, websiteLd } from "@/lib/seo";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Öztiryakiler Servisi | İstanbul Avrupa Yakası Endüstriyel Mutfak Teknik Servisi",
+    default: "Öztiryakiler Servisi | Avrupa Yakası Endüstriyel Mutfak",
     template: "%s | Öztiryakiler Servisi",
   },
   description:
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="icerik">{children}</main>
         <Footer />
         <MobileCallBar />
+        {site.gaId && <Analytics gaId={site.gaId} />}
       </body>
     </html>
   );
