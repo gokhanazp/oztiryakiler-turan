@@ -54,9 +54,9 @@ export default function Header() {
                 </NavLink>
 
                 {/* Mega menü */}
-                <div className="invisible absolute left-1/2 top-full w-[720px] -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-1/2 top-full w-[660px] -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                   <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_24px_60px_-12px_rgba(10,47,96,0.25)]">
-                    <ul className="grid grid-cols-3 gap-1 p-3">
+                    <ul className="grid grid-cols-2 gap-1 p-3">
                       {services.map((s) => (
                         <li key={s.slug}>
                           <Link href={`/${s.slug}`} className="group/item flex items-start gap-3 rounded-xl p-3 transition hover:bg-navy-50">
@@ -118,7 +118,7 @@ export default function Header() {
               <ArrowIcon className="hidden h-4 w-4 opacity-70 transition group-hover/cta:translate-x-0.5 xl:block" />
             </a>
 
-            <MobileMenu items={navItems} services={services.map((s) => ({ slug: s.slug, title: s.title }))} />
+            <MobileMenu items={navItems} services={services.map((s) => ({ slug: s.slug, title: s.title, icon: s.icon }))} />
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import type { Faq } from "@/data/services";
 export const metadata = buildMetadata({
   title: "Öztiryakiler Servisi | Avrupa Yakası Endüstriyel Mutfak",
   description:
-    "Öztiryakiler ocak, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında İstanbul Avrupa Yakası'nda aynı gün yerinde servis.",
+    "Öztiryakiler ocak, yer ocağı, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında İstanbul Avrupa Yakası'nda aynı gün yerinde servis.",
   path: "/",
   absoluteTitle: true,
   keywords: ["öztiryakiler servisi", "öztiryakiler teknik servis", "öztiryakiler servis istanbul", "endüstriyel mutfak servisi", "öztiryakiler tamir"],
@@ -45,7 +45,7 @@ export default function HomePage() {
               Öztiryakiler Endüstriyel Mutfak Servisi
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-navy-100">
-              Öztiryakiler ocak, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında
+              Öztiryakiler ocak, yer ocağı, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi arızalarında
               restoran, otel ve yemekhanelere hızlı, garantili ve şeffaf fiyatlı yerinde servis.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -58,10 +58,10 @@ export default function HomePage() {
           <div className="relative hidden lg:block">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
               <p className="text-sm font-semibold uppercase tracking-widest text-navy-200">Servis verdiğimiz ekipmanlar</p>
-              <ul className="mt-5 grid grid-cols-3 gap-3">
+              <ul className="mt-5 grid grid-cols-5 gap-2.5">
                 {services.map((s) => (
                   <li key={s.slug}>
-                    <Link href={`/${s.slug}`} className="flex flex-col items-center gap-2 rounded-xl bg-white/5 p-4 text-center text-xs font-medium text-white ring-1 ring-white/10 transition hover:bg-brand-500">
+                    <Link href={`/${s.slug}`} className="flex h-full flex-col items-center gap-2 rounded-xl bg-white/5 px-2 py-4 text-center text-[11px] font-medium leading-tight text-white ring-1 ring-white/10 transition hover:bg-brand-500">
                       <ServiceIcon name={s.icon} className="h-8 w-8" />
                       {s.name}
                     </Link>

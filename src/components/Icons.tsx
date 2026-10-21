@@ -20,6 +20,13 @@ const paths: Record<IconKey, React.ReactNode> = {
       <path d="M8 3.5c.8.8.8 1.7 0 2.5M12 3c.8.8.8 1.9 0 2.8M16 3.5c.8.8.8 1.7 0 2.5" />
     </>
   ),
+  yerocagi: (
+    <>
+      <path d="M6 7h12l-1 4H7z" />
+      <path d="M4 13h16M7 13l-1.5 8M17 13l1.5 8M9 21h6" />
+      <path d="M9 3.5c.7.7.7 1.6 0 2.3M12 3c.7.7.7 1.9 0 2.6M15 3.5c.7.7.7 1.6 0 2.3" />
+    </>
+  ),
   buzdolabi: (
     <>
       <rect x="5" y="2.5" width="14" height="19" rx="2" />

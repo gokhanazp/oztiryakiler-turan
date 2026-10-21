@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Params) {
   if (!d) return {};
   return buildMetadata({
     title: `${d.name} Öztiryakiler Servisi | Endüstriyel Mutfak`,
-    description: `${locative(d.name)} Öztiryakiler ocak, fritöz, fırın, benmari, ızgara, buzdolabı ve bulaşık makinesi için aynı gün yerinde servis. ${d.areas.slice(0, 3).join(", ")} ve tüm mahalleler.`,
+    description: `${locative(d.name)} Öztiryakiler ocak, yer ocağı, fritöz, fırın, benmari, ızgara, buzdolabı ve bulaşık makinesi için aynı gün yerinde servis. ${d.areas.slice(0, 3).join(", ")} ve tüm mahalleler.`,
     path: districtPath(d),
     absoluteTitle: true,
     keywords: [`${d.name.toLocaleLowerCase("tr-TR")} öztiryakiler servisi`, `${d.name.toLocaleLowerCase("tr-TR")} endüstriyel mutfak servisi`],

@@ -44,7 +44,7 @@ export const site = {
   stats: [
     { value: "15+", label: "Yıllık sektör deneyimi" }, // DEĞİŞTİR
     { value: "25", label: "Avrupa Yakası ilçesinde hizmet" },
-    { value: "9", label: "Ekipman grubunda uzmanlık" },
+    { value: "10", label: "Ekipman grubunda uzmanlık" },
     { value: "7/24", label: "Acil arıza hattı" },
   ],
   warrantyText: "Yapılan işçilik ve değiştirilen parçalar garantilidir.", // Garanti koşullarınıza göre güncelleyin

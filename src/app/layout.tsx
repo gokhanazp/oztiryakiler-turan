@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | Öztiryakiler Servisi",
   },
   description:
-    "Öztiryakiler ocak, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi için İstanbul Avrupa Yakası'nda aynı gün yerinde özel teknik servis.",
+    "Öztiryakiler ocak, yer ocağı, fritöz, fırın, pizza fırını, benmari, ızgara, makarna haşlama, buzdolabı ve bulaşık makinesi için İstanbul Avrupa Yakası'nda aynı gün yerinde özel teknik servis.",
   applicationName: site.name,
   authors: [{ name: site.name }],
   formatDetection: { telephone: true, address: false, email: false },

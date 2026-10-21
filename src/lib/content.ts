@@ -62,7 +62,7 @@ export function comboFaqs(s: District, sv: Service): Faq[] {
 export function districtIntro(s: District): string[] {
   const loc = locative(s.name);
   return [
-    `${loc} Öztiryakiler marka endüstriyel mutfak ekipmanlarına özel teknik servis hizmeti veriyoruz. Ocak, fritöz, fırın, pizza fırını, benmari, makarna haşlama, ızgara, buzdolabı ve bulaşık makinesi arızalarında ${listToText(s.areas.slice(0, 5))} dahil ilçenin tüm mahallelerine yerinde servis sağlıyoruz.`,
+    `${loc} Öztiryakiler marka endüstriyel mutfak ekipmanlarına özel teknik servis hizmeti veriyoruz. Ocak, yer ocağı, fritöz, fırın, pizza fırını, benmari, makarna haşlama, ızgara, buzdolabı ve bulaşık makinesi arızalarında ${listToText(s.areas.slice(0, 5))} dahil ilçenin tüm mahallelerine yerinde servis sağlıyoruz.`,
     `Müşterilerimizin büyük bölümünü ${s.profile} oluşturuyor. Ticari mutfakta bir cihazın durmasının ne anlama geldiğini biliyor, ${s.name} bölgesindeki çağrılara hızlı yanıt veriyoruz.`,
   ];
 }

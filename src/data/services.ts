@@ -22,6 +22,7 @@ export type Service = {
 
 export type IconKey =
   | "ocak"
+  | "yerocagi"
   | "buzdolabi"
   | "fritoz"
   | "benmari"
@@ -83,6 +84,57 @@ export const services: Service[] = [
     ],
     keywords: ["öztiryakiler ocak servisi", "öztiryakiler ocak tamiri", "endüstriyel ocak servisi", "gazlı ocak tamiri", "öztiryakiler termokupl"],
     customers: "restoranlar, lokantalar, otel mutfakları ve toplu yemek üreticileri",
+  },
+  {
+    slug: "oztiryakiler-yer-ocagi-servisi",
+    name: "Yer Ocağı",
+    title: "Öztiryakiler Yer Ocağı Servisi",
+    icon: "yerocagi",
+    metaTitle: "Öztiryakiler Yer Ocağı Servisi | Brülör ve Valf Tamiri",
+    metaDescription:
+      "Öztiryakiler yer ocağı (kazan ocağı) arızalarında yerinde servis. Alev sönmesi, brülör tıkanması, gaz valfi ve termokupl onarımı. İstanbul Avrupa Yakası.",
+    short: "Tek ve çift gözlü yer ocaklarında (kazan ocağı) brülör, gaz valfi, termokupl ve ateşleme onarımı.",
+    intro: [
+      "Yer ocağı; büyük kazanlarda çorba, pilav, et ve haşlama pişiren toplu yemek mutfaklarının, kebap ve döner salonlarının, catering ve düğün mutfaklarının temel ekipmanıdır. Öztiryakiler yer ocağı modellerinde alevin sönmesi, gücün düşmesi ya da düzensiz yanma, onlarca kişilik yemeğin yetişmemesi demektir. Ekibimiz bu arızalara aynı gün yerinde müdahale eder.",
+      "Yer ocakları yüksek kapasiteli brülörlerle çalıştığı için gaz tüketimi ve güvenlik kritik önemdedir. Teknisyenlerimiz brülör halkalarını, gaz musluğunu, termokupl ve emniyet ventilini, pilot alevi ve hortum bağlantılarını kontrol eder; sızdırmazlık testi yapmadan cihazı teslim etmez. Ağır kazan yükü nedeniyle eğilen ızgara ve gövde parçalarını da onarır ya da yenileriz.",
+    ],
+    types: [
+      "Tek gözlü yer ocakları",
+      "Çift gözlü yer ocakları",
+      "Şok (yüksek güçlü) brülörlü yer ocakları",
+      "Paslanmaz ve döküm gövdeli modeller",
+      "LPG ve doğalgazlı yer ocakları",
+    ],
+    faults: [
+      { title: "Yer ocağı alevi sönüyor", text: "Termokupl, pilot alev veya emniyet ventili arızası en sık nedendir. Termokupl ve ventil değişimiyle giderilir." },
+      { title: "Alev zayıf, kazan geç kaynıyor", text: "Brülör halkaları tıkanmış, meme kirlenmiş ya da gaz basıncı düşük olabilir. Brülör temizliği ve meme kontrolü yapılır." },
+      { title: "Sarı, isli ve gürültülü alev", text: "Hava ayarı bozulmuş veya brülöre yağ ve yemek artığı dolmuş. Hava klapesi ayarı ve temizlik yapılır." },
+      { title: "Gaz kokusu", text: "Musluk, rakor veya hortum bağlantısında kaçak olabilir. Ocağı kapatıp gaz vanasını kesin ve servis çağırın." },
+      { title: "Gaz musluğu sert dönüyor / ayar tutmuyor", text: "Musluk içi kurumuş veya aşınmış. Musluk bakımı ya da değişimi yapılır." },
+      { title: "Izgara veya ayak eğildi / kırıldı", text: "Ağır kazan yükü zamanla ızgarayı ve gövdeyi deforme eder. Izgara değişimi ve gövde onarımı yapılır." },
+    ],
+    work: [
+      "Brülör halkası sökümü, temizliği ve hava ayarı",
+      "Termokupl, pilot ve emniyet ventili değişimi",
+      "Gaz musluğu bakımı, değişimi ve kaçak testi",
+      "Meme (enjektör) değişimi ve LPG / doğalgaz dönüşümü",
+      "Ateşleme (piezo / çakmak) sistemi onarımı",
+      "Kazan ızgarası, ayak ve gövde onarımı",
+    ],
+    maintenance: [
+      "Brülörü haftada bir sökerek taşan yemek ve yağ kalıntılarından temizleyin.",
+      "Kazanı ocağa ortalayarak yerleştirin; alevin kazan dışına taşması verimi düşürür.",
+      "Gaz hortumunu ve kelepçeleri düzenli kontrol ettirin.",
+      "Alev rengi sarıya döndüğünde veya ses değiştiğinde ayar yaptırın.",
+    ],
+    faqs: [
+      { q: "Öztiryakiler yer ocağım neden sürekli sönüyor?", a: "En yaygın neden termokupl veya emniyet ventili arızasıdır. Termokupl alevin dışında kalmışsa da ocak söner. Yerinde kontrol edip termokupl ve ventili ayarlıyor ya da değiştiriyoruz." },
+      { q: "Yer ocağının alevi neden zayıf?", a: "Brülör halkaları ve memeler zamanla yemek ve yağ kalıntısıyla tıkanır. Brülör temizliği ve meme kontrolü çoğu zaman alevi eski gücüne döndürür; gaz basıncı da ayrıca ölçülür." },
+      { q: "Yer ocağı LPG'den doğalgaza çevrilebilir mi?", a: "Evet. Meme değişimi ve musluk ayarıyla gaz tipi dönüşümü yapılır, ardından kaçak testi ve alev ayarı tamamlanır." },
+      { q: "Yer ocağı ızgarası değişir mi?", a: "Evet. Eğilen veya kırılan kazan ızgarası ve ayaklar uygun ölçüde yenisiyle değiştirilir ya da onarılır." },
+    ],
+    keywords: ["öztiryakiler yer ocağı servisi", "öztiryakiler yer ocağı tamiri", "yer ocağı servisi", "kazan ocağı tamiri", "yer ocağı termokupl"],
+    customers: "toplu yemek üreticileri, catering firmaları, döner ve kebap salonları, düğün ve otel mutfakları",
   },
   {
     slug: "oztiryakiler-buzdolabi-servisi",

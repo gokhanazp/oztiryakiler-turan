@@ -5,7 +5,7 @@ import { services, type Faq } from "@/data/services";
 
 export const metadata = buildMetadata({
   title: "Sıkça Sorulan Sorular",
-  description: "Öztiryakiler ocak, fritöz, fırın, buzdolabı, bulaşık makinesi ve diğer endüstriyel mutfak ekipmanları servisiyle ilgili sıkça sorulan sorular ve yanıtları.",
+  description: "Öztiryakiler ocak, yer ocağı, fritöz, fırın, buzdolabı, bulaşık makinesi ve diğer endüstriyel mutfak ekipmanları servisiyle ilgili sıkça sorulan sorular ve yanıtları.",
   path: "/sikca-sorulan-sorular",
 });
 

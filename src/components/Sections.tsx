@@ -103,7 +103,7 @@ export function SectionHead({ eyebrow, title, lead, center = false }: { eyebrow?
 export function ServiceGrid({ districtSlug, exclude, districtName }: { districtSlug?: string; exclude?: string; districtName?: string }) {
   const list = services.filter((s) => s.slug !== exclude);
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className={`grid gap-5 sm:grid-cols-2 ${list.length % 3 === 0 ? "lg:grid-cols-3" : "xl:grid-cols-5"}`}>
       {list.map((s) => {
         const href = districtSlug ? `/${s.slug}/${districtSlug}` : `/${s.slug}`;
         return (

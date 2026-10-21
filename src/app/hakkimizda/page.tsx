@@ -25,7 +25,7 @@ export default function AboutPage() {
             <p>
               {site.name}, {site.foundingYear} yılından bu yana İstanbul Avrupa Yakası&apos;nda restoran, otel, kafe, pastane, hastane ve
               fabrika yemekhanelerine endüstriyel mutfak ekipmanları teknik servisi vermektedir. Uzmanlık alanımız Öztiryakiler marka
-              ocak, fritöz, fırın, pizza fırını, benmari, makarna haşlama, ızgara, buzdolabı ve bulaşık makinelerinin bakım ve onarımıdır.
+              ocak, yer ocağı, fritöz, fırın, pizza fırını, benmari, makarna haşlama, ızgara, buzdolabı ve bulaşık makinelerinin bakım ve onarımıdır.
             </p>
             <p>
               Gazlı cihazlar, elektrikli ısıtma sistemleri ve soğutma devreleri konusunda deneyimli teknisyenlerimiz, servis araçlarımızda
